@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="static/img/3.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ok.css' %}">
+    <title>Любовная Лирика</title>
+</head>
+<body style="width: 100%; height: 100%; border:30px solid; margin:auto;background-image: radial-gradient(at 3.412784723705098% 68.45341299448448%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 1) 0%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 0) 100%), radial-gradient(at 31.161382095822688% 75.53173267527254%, hsla(45.54973821989528, 100%, 62.549019607843135%, 1) 0%, hsla(45.54973821989528, 100%, 62.549019607843135%, 0) 100%), radial-gradient(at 38.8511405748398% 99.79811012427618%, hsla(358.41059602649005, 100%, 70.3921568627451%, 1) 0%, hsla(358.41059602649005, 100%, 70.3921568627451%, 0) 100%), radial-gradient(at 46.68150570364533% 64.93517059430982%, hsla(203.76470588235293, 100%, 50%, 1) 0%, hsla(203.76470588235293, 100%, 50%, 0) 100%), radial-gradient(at 6.530612415339032% 94.86687246501258%, hsla(160.62111801242236, 96.40718562874252%, 67.25490196078432%, 1) 0%, hsla(160.62111801242236, 96.40718562874252%, 67.25490196078432%, 0) 100%), radial-gradient(at 62.217157234174714% 48.25751208473812%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 1) 0%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 0) 100%), radial-gradient(at 85.15764043995102% 74.97748749105459%, hsla(45.54973821989528, 100%, 62.549019607843135%, 1) 0%, hsla(45.54973821989528, 100%, 62.549019607843135%, 0) 100%), radial-gradient(at 79.74764386956048% 86.46315802545772%, hsla(358.41059602649005, 100%, 70.3921568627451%, 1) 0%, hsla(358.41059602649005, 100%, 70.3921568627451%, 0) 100%), radial-gradient(at 10.186690752739857% 5.544158603646454%, hsla(203.76470588235293, 100%, 50%, 1) 0%, hsla(203.76470588235293, 100%, 50%, 0) 100%), radial-gradient(at 47.58044446556351% 64.51868587017809%, hsla(160.62111801242236, 96.40718562874252%, 67.25490196078432%, 1) 0%, hsla(160.62111801242236, 96.40718562874252%, 67.25490196078432%, 0) 100%), radial-gradient(at 25.12451911009026% 18.31760752297471%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 1) 0%, hsla(340.62111801242236, 96.40718562874252%, 67.25490196078432%, 0) 100%), radial-gradient(at 1.581946338325202% 47.17837512052765%, hsla(45.54973821989528, 100%, 62.549019607843135%, 1) 0%, hsla(45.54973821989528, 100%, 62.549019607843135%, 0) 100%);">
+    <div style="position:fixed;list-style-type:none;font-size:25px;display:inline-block;margin-left:-32px;">
+                <a style="color:#FF0000;text-decoration:none;margin-top:250px;" href="{% url 'ocn' %}"><li></i>Главная страница</li></a>
+                <a style="color:#FF0000;text-decoration:none;" href="{% url 'stixi' %}"><li></i>Каталог стихов</li></a>
+    </div>
+    <main>
+        {% block terarium %}
+        {% endblock %}
+    </main>
+</body>
+</html>

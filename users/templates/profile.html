@@ -1,0 +1,27 @@
+{% extends "shabl/shablon4.html" %}
+{% load crispy_forms_tags %}
+{% block terarium %}
+    <div class="profile-container">
+        <div class="user-info">
+            <div class="user-name">{{ user.username }}</div>
+            <div class="user-email">{{ user.email }}</div>
+        </div>
+        <h4 class="profile-title">Произведения</h4>
+        {% if entries %}
+            <ul class="entries-list">
+                {% for entry in entries %}
+                    <li class="entry-item">
+                        <div class="entry-title">{{ entry.title }}</div>
+                        <div class="entry-author">Автор: {{ entry.author }}</div>
+                        <div class="entry-date">Дата публикации: {{ entry.datepublic }}</div>
+                        <div class="entry-text">{{ entry.txt }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="no-entries">
+                У вас пока нет опубликованных произведений.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'shabl/st1shabl2.html' %}
+{% load static %}
+{% block polka %}Природная Лирика{% endblock %}
+{% block terarium %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ok.css' %}">
+</head>
+<body>
+    <div style="margin-left:30%;font-size:20px;">
+        {% for i in ttt %}
+        <h3 style="margin-left:0%">{{ i.nazv }}</h3>
+        <pre>{{ i.txt }}</pre>
+        {% endfor %}
+{% endblock %}

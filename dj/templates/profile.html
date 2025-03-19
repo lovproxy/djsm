@@ -1,0 +1,122 @@
+{% extends 'shabl/shablon4.html' %}
+{% block terarium %}
+<style>
+    .profile-container {
+        border: 5px solid #2ecc71;
+        border-radius: 10px;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 3.3%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .profile-title {
+        text-align: center;
+        color: #2ecc71;
+        font-size: 24px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    .entries-list {
+        list-style: none;
+        padding: 0;
+    }
+    .entry-item {
+        border: 2px solid #bdc3c7;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        background: white;
+        transition: transform 0.3s ease;
+    }
+    .entry-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .entry-title {
+        color: #2ecc71;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .entry-author {
+        color: #7f8c8d;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .entry-date {
+        color: #95a5a6;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .entry-text {
+        color: #2c3e50;
+        line-height: 1.6;
+    }
+    .no-entries {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 16px;
+        padding: 20px;
+    }
+    .add-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #2ecc71;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    .add-button:hover {
+        background: #27ae60;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    }
+    .button-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .user-info {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+    .user-name {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+    }
+</style>
+
+<div class="profile-container">
+    <div class="user-info">
+        <div class="user-name">{{ profile_user.username }}</div>
+    </div>
+    <h4 class="profile-title">Произведения</h4>
+    {% if is_owner %}
+    <div class="button-container">
+        <a href="{% url 'stih_form' %}" class="add-button">Добавить новое произведение</a>
+    </div>
+    {% endif %}
+    {% if entries %}
+        <ul class="entries-list">
+            {% for entry in entries %}
+                <li class="entry-item">
+                    <div class="entry-title">{{ entry.title }}</div>
+                    <div class="entry-author">Автор: {{ entry.author }}</div>
+                    <div class="entry-date">Дата публикации: {{ entry.datepublic }}</div>
+                    <div class="entry-text">{{ entry.txt }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="no-entries">
+            У пользователя пока нет опубликованных произведений.
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 

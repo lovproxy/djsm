@@ -1,0 +1,26 @@
+{% extends 'shabl/shablon2.html' %}
+{% load static %}
+{% block polka %}Стихи Пользователей{% endblock %}
+{% block terarium %}
+<body>
+<link rel="stylesheet" href="{% static 'css/katal.css' %}">
+    <div style="margin-left: 25%; margin-top: 2%;">
+        <h3>Стихи пользователей:</h3>
+    </div>
+    <div style="margin-left: 15%; margin-right: 15%; margin-top: 2%;">
+        {% for entry in entries %}
+            <div style="background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <h4 style="color: #9400D3;">{{ entry.title }}</h4>
+                <p style="color: #666;">Автор: <a href="{% url 'profile' entry.user.id %}" style="color: #9400D3; text-decoration: none;">{{ entry.author }}</a></p>
+                <p style="white-space: pre-line;">{{ entry.txt }}</p>
+                <p style="color: #999; font-size: 0.9em;">Дата публикации: {{ entry.datepublic }}</p>
+            </div>
+        {% empty %}
+            <p style="text-align: center; color: #666;">Пока нет опубликованных стихов.</p>
+        {% endfor %}
+    </div>
+    <div style="margin-top: 6.5%; margin-left: 41.9%">
+        <h6>Разработано:@plastinin_fs</h6>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'shabl/st3shabl.html' %}
+{% load static %}
+{% block polka %}Филосовская Лирика{% endblock %}
+{% block terarium %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/xd.css' %}">
+</head>
+<body>
+    <form action="{% url 'open3' %}" method="post">
+        {% csrf_token %}
+        <button style = "font-size:25px;"name="foo" value="upvote">Открыть больше стихов</button></form>
+    <div style="margin-left:30%;font-size:20px;">
+        {% for i in txt3 %}
+        <h3 style="margin-left:0%">{{ i.nazv3 }}</h3>
+        <pre>{{ i.txt3 }}</pre>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="static/img/3.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ok.css' %}">
+    <title>Природная Лирика</title>
+</head>
+<body style="width: 100%; height: 100%; border:30px solid; margin:auto;background-image: radial-gradient(at 4.177592883047754% 4.529690522834207%, hsla(168.33333333333334, 80.59701492537312%, 73.72549019607844%, 1) 0%, hsla(168.33333333333334, 80.59701492537312%, 73.72549019607844%, 0) 100%), radial-gradient(at 37.627440203943465% 32.61351630436469%, hsla(180, 79.1044776119403%, 73.72549019607844%, 1) 0%, hsla(180, 79.1044776119403%, 73.72549019607844%, 0) 100%), radial-gradient(at 24.535860705069368% 77.7661469729183%, hsla(168.33333333333334, 80.59701492537312%, 73.72549019607844%, 1) 0%, hsla(168.33333333333334, 80.59701492537312%, 73.72549019607844%, 0) 100%);">
+    <div style="position:fixed;list-style-type:none;font-size:25px;display:inline-block;margin-left:-32px;">
+                <a style="color:#FF0000;text-decoration:none;margin-top:90px;" href="{% url 'ocn' %}"><li></i>Главная страница</li></a>
+                <a style="color:#FF0000;text-decoration:none;" href="{% url 'stixi' %}"><li></i>Каталог стихов</li></a>
+                <a style="color:#FF0000;text-decoration:none;" href="{% url 'lec' %}"><li></i>Вернуться назад</li></a>
+    </div>
+    <main>
+        {% block terarium %}
+        {% endblock %}
+    </main>
+</body>
+</html>

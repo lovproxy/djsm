@@ -1,0 +1,34 @@
+{% extends 'shabl/shablon2.html' %}
+{% load static %}
+{% block polka %}Каталог{% endblock %}
+{% block terarium %}
+<body>
+<link rel="stylesheet" href="{% static 'css/katal.css' %}">
+    <div>
+        <div  style="margin-left:25%;margin-top:-4%">
+            <h3>Выберите интересующий вас жанр стихотворения:</h3>
+        </div>
+        <div>
+            <a href="{% url 'love' %}" class="btn btn-danger" style="font-size:100%;margin-left:12%;margin-top:2%;">Любовная лирика</a>
+        </div>
+        <div>
+            <a href="{% url 'lec' %}" class="btn btn-success" style="font-size:100%;margin-left:32%;margin-top:-5.3%">Природная лирика</a>
+        </div>
+        <div>
+            <a href="{% url 'grazhd' %}" class="btn btn-warning" style="font-size:100%;margin-left:52%;margin-top:-9.1%">Гражданская лирика</a>
+        </div>
+        <div>
+            <a href="{% url 'fil' %}" class="btn btn-primary" style="font-size:100%;margin-left:73%;margin-top:-12.9%">Филосовская лирика</a>
+        </div>
+        <div>
+            <a href="{% url 'st5' %}" class="btn btn-secondary" style="font-size:100%;margin-left:42%;margin-top:-3%">Стихи Пользователей</a>
+        </div>
+    </div>
+    <div style="width: 23.0%; height: 100%; border:10px solid; margin-left:36.9%;margin-top:20px;">
+          <h5 style="color:#800080">В научных кругах Владимир Набоков известен в первую очередь не как литератор, а как выдающийся лепидоптеролог — специалист по бабочкам. Некоторое время его основным доходом была как раз исследовательская, а не творческая деятельность.</h5>
+    </div>
+    <div style="margin-top:4.8%;margin-left:41.9%">
+            <h6>Разработано:@plastinin_fs</h6>
+    </div>
+</body>
+{% endblock %}
