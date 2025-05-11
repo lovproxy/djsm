@@ -12,9 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['78945612143.pythonanywhere.com']
 
 
 # Application definition
@@ -71,7 +70,7 @@ WSGI_APPLICATION = 'djsm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'auth.db',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
     'xd.db':{
         'ENGINE': 'django.db.backends.sqlite3',
@@ -114,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
